@@ -76,7 +76,7 @@ endif
 
 if g:task_readonly
     setlocal readonly
-    if hasmapto('<Plug>(taskwarrior_undo)')
+    if !g:task_disable_mappings && hasmapto('<Plug>(taskwarrior_undo)')
         nunmap <silent> <buffer> A
         nunmap <silent> <buffer> x
         nunmap <silent> <buffer> o
@@ -104,6 +104,7 @@ if g:task_readonly
         vunmap <silent> <buffer> <Space>
     endif
 else
+	if !g:task_disable_mappings
     nmap <silent> <buffer> A        <Plug>(taskwarrior_annotate)
     nmap <silent> <buffer> x        <Plug>(taskwarrior_denotate)
     nmap <silent> <buffer> o        <Plug>(taskwarrior_open_annotate)
@@ -130,6 +131,7 @@ else
     vmap <silent> <buffer> D        <Plug>(taskwarrior_visual_delete)
     vmap <silent> <buffer> <Del>    <Plug>(taskwarrior_visual_delete)
     vmap <silent> <buffer> <Space>  <Plug>(taskwarrior_visual_select)
+	endif
 
     command! -buffer TWAdd               :call taskwarrior#action#new()
     command! -buffer TWAnnotate          :call taskwarrior#action#annotate('add')

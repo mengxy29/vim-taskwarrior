@@ -174,6 +174,8 @@ let g:task_log_max         = '20'
 let g:task_left_arrow      = ' <<'
 " backward arrow ...
 let g:task_left_arrow      = '>> '
+"disable default mappings
+let g:task_disable_mapping = 0
 
 ```
 ----

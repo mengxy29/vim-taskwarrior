@@ -61,7 +61,7 @@ the vim-airline plugin (https://github.com/bling/vim-airline) is not required
 but it greatly enhances the status-bar and takes the guess-work out of reports.
 
 If you experience line-wrapping issues, add the following line to your .vimrc
-let g:task_rc_override = 'defaultwidth=999'
+let g:task_rc_override = 'rc.defaultwidth=999'
 
 ==============================================================================
 3. MAPPING                                                         *tw-mappings*
@@ -238,7 +238,9 @@ Default value is '>> '
                                                                *g:task_gui_term*
 Uses gvim's dumb terminal for undo commands when set to 1.
 Default value is 1
-
+                                                       *g:task_disable_mappings*
+Disable setting the default mappings
+Default value is 0
 ==============================================================================
 6. TROUBLESHOOTING                                          *tw-troubleshooting*
 
